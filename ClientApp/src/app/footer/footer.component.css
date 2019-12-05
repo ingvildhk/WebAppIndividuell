@@ -1,0 +1,32 @@
+.container-fluid {
+  background-color: #3d3d3d;
+  color: #8cb2c2;
+}
+
+.row {
+  padding-bottom: 0.5rem;
+}
+
+.con {
+  padding-left: 13rem;
+  padding-top: 1rem;
+  padding-bottom: 25rem;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+a {
+  color: white;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  padding-left: 11rem;
+}

@@ -1,0 +1,31 @@
+.container-fluid {
+  background-color: #c8e3de;
+  border-color: #CBE8E6;
+}
+
+.kunde-form {
+  padding-top: 0.5rem;
+  padding-left: 3rem;
+  padding-bottom: 5rem;
+}
+
+.faq-button {
+  border-color: #008B74;
+  background-color: #63aba6;
+  color: black;
+}
+
+.form-control {
+  border-color: #008B74;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 2.5rem;
+}
+
+#error-bar {
+  background-color: #f7baba;
+  color: black;
+  border-color: darkred;
+}

@@ -1,0 +1,51 @@
+<br />
+<br />
+
+<div class="container-fluid">
+  <form [formGroup]="form" (ngSubmit)="registrerHenvendelse()" class="kunde-form">
+    <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-md-8">
+      <h3>
+        Fant du ikke svar på det du lurte på? Ta kontakt med kundeservice
+      </h3>
+    </div>
+</div>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-md-8">
+    <div class="form-group">
+      <label>Epost</label>
+      <input type="text" formControlName="epost" class="form-control" (click)="eKlikk=true" [ngClass]="{ 'is-invalid': submitted && form.epost.errors }" />
+      <p class="alert alert-warning" [hidden]=" !eKlikk || form.controls.epost.valid" id="error-bar">
+        Epost må være en godkjent epostadresse
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-md-8">
+    <div class="form-group">
+      <label>Henvendelse</label>
+      <textarea formControlName="henvendelse" class="form-control" (click)="hKlikk=true" [ngClass]="{'is-invalid': submitted && form.henvendelse.errors}">
+        </textarea>
+      <p class="alert alert-warning" [hidden]=" !hKlikk || form.controls.henvendelse.valid" id="error-bar">
+        Vennligst fyll ut henvendelse
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-md-8">
+    <div class="form-group">
+      <button type="submit" [disabled]="!form.valid" class="btn faq-button" (click)="Registrert=true">Registrer</button>
+    </div>
+    <div *ngIf="Registrert">{{melding}}</div>
+  </div>
+</div>
+  </form>
+  </div>

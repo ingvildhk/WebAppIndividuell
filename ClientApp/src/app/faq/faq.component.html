@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="con">
+    <div class="row">
+      <div class="col-md-9" *ngFor="let k of kategorier">
+        <h2>{{k}}</h2>
+        <div *ngFor="let f of faq">
+          <ng-container *ngIf="f.kategori == k">
+            <div class="row">
+              <ul class="list-group list-group-flush" (click)="hentEnFaq(f.id)" id="spm">
+                <li class="list-group-item">
+                  <div class="col-md-10" id="spm-col">
+                    <h4>{{f.spm}}</h4>
+                  </div>
+                  <div class="col-md-2">
+                    <div *ngIf="!toggleState[f.id]">
+                      <span class="glyphicon glyphicon-menu-down"></span>
+                    </div>
+                    <div *ngIf="toggleState[f.id]">
+                      <span class="glyphicon glyphicon-menu-up"></span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+              <div *ngIf="toggleState[f.id]">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" id="svar-li">
+                    <div class="row" id="svar-row">
+                      <p>{{f.svar}}</p>
+                      <br /><br />
+                      <p class="p-tommel">Fikk du svar på det du lurte på?</p>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-2">
+                        <span class="glyphicon glyphicon-thumbs-up spm" (click)="tommelOpp(f.id)"></span>
+                        <div class="tommelO">
+                          {{f.tommelOpp}}
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <span class="glyphicon glyphicon-thumbs-down spm" (click)="tommelNed(f.id)"></span>
+                        <div class="tommelN">{{f.tommelNed}}</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
